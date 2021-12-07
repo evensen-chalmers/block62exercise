@@ -1,17 +1,17 @@
 package polygon;
 
-import java.awt.*;
-import java.util.List;
+import java.awt.Graphics;
+import java.awt.Point;
 
 /**
  * Created by Niklas on 2016-02-28.
  */
 public interface IPolygon {
-    public IPolygon translate(int x, int y);
-    public IPolygon rotate(double radians);
-    public IPolygon scale(double x, double y);
+    IPolygon translate(int x, int y);
+    IPolygon rotate(double radians);
+    IPolygon scale(double x, double y);
 
-    public Point getCenterPoint();
+    Point getCenterPoint();
 
-    public void paint(Graphics g);
+    void paint(Graphics g);
 }

@@ -1,7 +1,6 @@
 package polygon;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Point;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,12 +8,12 @@ import java.util.List;
  * Created by Niklas on 2016-02-28.
  */
 class BasePolygon extends AbstractPolygon implements IPolygon {
-    private Point centerPoint;
-    private List<Point> points;
+    private final Point centerPoint;
+    private final List<Point> points;
 
     protected BasePolygon(List<Point> points){
         this.points = defensiveCopyPointList(points);
-        centerPoint = calculateCenterPoint(this.points);
+        this.centerPoint = calculateCenterPoint(this.points);
     }
 
     // defensive copying of all points in a list
@@ -58,12 +57,12 @@ class BasePolygon extends AbstractPolygon implements IPolygon {
 
     @Override
     protected void manipulatePoint(Point center, Point p) {
-        ; // In base, we don't do manipulations
+         // In base, we don't do manipulations
     }
 
     @Override
     public Point getCenterPoint() {
         // defensive copying
-        return new Point(centerPoint);
+        return new Point(this.centerPoint);
     }
 }

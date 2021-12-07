@@ -1,15 +1,17 @@
 package polygon;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.*;
+import java.awt.Graphics;
+import java.awt.Point;
 import java.util.List;
+
+import javax.swing.JComponent;
 
 /**
  * Created by Niklas on 2016-02-29.
  */
 abstract class AbstractPolygon extends JComponent implements IPolygon {
-    public void paint(Graphics g){
+    @Override
+	public void paint(Graphics g){
         java.util.List<Point> corners = getPoints();
         // first and last point should be the same
         corners.add(corners.get(0));
